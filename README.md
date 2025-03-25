@@ -96,7 +96,6 @@
 │ payment_method│        │ review_text        │
 │ total_amount  │        └────────────────────┘
 └───────────────┘
-
 ## Key Design Principles
 Microservices architecture
 Event-driven design

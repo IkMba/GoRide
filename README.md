@@ -44,58 +44,8 @@
 └─────────────────────────────────────────────────────────────────┘
 
 ## Database Relationship Diagram
-┌───────────────┐        ┌───────────────┐
-│     USERS     │        │    CAPTAINS   │
-├───────────────┤        ├───────────────┤
-│ PK: id        │        │ PK: id        │
-│ first_name    │        │ first_name    │
-│ last_name     │        │ last_name     │
-│ email         │        │ email         │
-│ phone_number  │        │ phone_number  │
-│ account_status│        │ driver_license│
-└───┬───────────┘        └───┬───────────┘
-    │                        │
-    │                        │
-    │                        ▼
-┌───▼───────────────┐    ┌───────────────┐
-│     VEHICLES      │    │   RIDE TYPE   │
-├───────────────────┤    ├───────────────┤
-│ PK: id            │    │ standard      │
-│ FK: captain_id    │    │ premium       │
-│ make              │    │ shared        │
-│ model             │    │ accessibility │
-│ license_plate     │    └───────────────┘
-│ vehicle_type      │
-└───┬───────────────┘
-    │
-    ▼
-┌───────────────────────────────┐
-│            RIDES              │
-├───────────────────────────────┤
-│ PK: id                        │◄────┐
-│ FK: user_id                   │     │
-│ FK: captain_id                │     │
-│ FK: vehicle_id                │     │
-│ status                        │     │
-│ ride_type                     │     │
-│ pickup_location               │     │
-│ dropoff_location              │     │
-│ estimated_distance            │     │
-│ total_fare                    │     │
-│ requested_at                  │     │
-│ completed_at                  │     │
-└───────────────────────────────┘     │
-    │                                 │
-    ▼                                 │
-┌───────────────┐        ┌────────────┴────────┐
-│   PAYMENTS    │        │      RATINGS        │
-├───────────────┤        ├────────────────────┤
-│ PK: id        │        │ PK: id             │
-│ FK: ride_id   │        │ FK: ride_id        │
-│ FK: user_id   │        │ rating             │
-│ payment_method│        │ review_text        │
-│ total_amount  │        └────────────────────┘
-└───────────────┘
+ride_booking_erd
+
 ## Key Design Principles
 Microservices architecture
 Event-driven design

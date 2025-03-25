@@ -12,36 +12,7 @@
 ####  Payment service, Notifications service and Geolocation Service in progress
 
 ## Architecture Diagram
-┌─────────────────────────────────────────────────────────────────┐
-│                     API GATEWAY / LOAD BALANCER                 │
-└───────────────────┬─────────────────────────────────────────────┘
-                    │
-                    ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                     RIDE SERVICE COMPONENTS                     │
-│  ┌───────────────┐   ┌───────────────┐   ┌───────────────┐      │
-│  │ Ride Request  │   │  Ride Matching│   │ Ride Tracking │      │
-│  │ Management    │   │   Algorithm   │   │   Service     │      │
-│  └───────┬───────┘   └───────┬───────┘   └───────┬───────┘      │
-│          │                   │                   │              │
-└──────────┼───────────────────┼───────────────────┼──────────────┘
-           │                   │                   │
-           ▼                   ▼                   ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                      EXTERNAL INTEGRATIONS                      │
-│  ┌───────────────┐   ┌───────────────┐   ┌───────────────┐      │
-│  │ User Service  │   │ Captain Service│   │Payment Service│      │
-│  └───────────────┘   └───────────────┘   └───────────────┘      │
-└─────────────────────────────────────────────────────────────────┘
-                    │           │           │
-                    ▼           ▼           ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                       DATA PERSISTENCE                          │
-│  ┌───────────────┐   ┌───────────────┐   ┌───────────────┐      │
-│  │  Ride Database│   │Location Cache │   │ Audit Logging │      │
-│  │  (Mongo Db )  │   │   (Redis)     │   │(Elastic search)      │  
-│  └───────────────┘   └───────────────┘   └───────────────┘      │
-└─────────────────────────────────────────────────────────────────┘
+![ride_booking_architecture](https://github.com/user-attachments/assets/46bfda00-eb50-42b5-a7a5-0098d566c89f)
 
 ## Database Relationship Diagram
 ![ride_booking_erd](https://github.com/user-attachments/assets/8841e94a-3cc7-4029-bf6b-1c5b603eeb69)

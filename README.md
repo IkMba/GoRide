@@ -44,7 +44,8 @@
 └─────────────────────────────────────────────────────────────────┘
 
 ## Database Relationship Diagram
-ride_booking_erd
+![ride_booking_erd](https://github.com/user-attachments/assets/8841e94a-3cc7-4029-bf6b-1c5b603eeb69)
+
 
 ## Key Design Principles
 Microservices architecture
